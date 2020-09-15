@@ -10,8 +10,6 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 const app=express();
 
-//console.log(process.env.API_KEY)
-//console.log(md5("123456"));
 
 app.use(express.static("public"));
 app.set('view engine','ejs');
@@ -85,7 +83,7 @@ app.post("/register", function(req, res){
 });
  
 app.post("/login", function(req, res){ 
-
+    
 const user = new User ({
     username: req.body.username,
     password: req.body.password
